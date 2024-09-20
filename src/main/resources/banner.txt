@@ -1,0 +1,5 @@
+
+
+${AnsiColor.MAGENTA}   /\_/\
+${AnsiColor.MAGENTA}  ( o.o )
+${AnsiColor.MAGENTA}   > ^ <

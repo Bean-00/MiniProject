@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: ENC(1HZt07YvcWU7NOKH5IuavzqRHwX8ZIAhUKQ6LHhYBYsXe+weWe5Ka9W9t2a40BAR)
+    jdbc-url: ENC(xRfrDwUWwRUCe+Yum+XkvSOb9LWy+oMkTX7SMCPzquqZnJv8HmLZnp4lIEu4r4k1qavBkCJkgzA=)
+    username: ENC(Lpeq4EMcsktz8gb2Q3gwznKNNx4qc4RfihFTiKvjvrw=)
+    password: ENC(0yhv8bPdVB4VhsCyCha/rPKILfl8YKvhKvd+nuH8s3M=)
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    property:
+      prefix: ENC(
+      suffix: )
+
+server:
+  port: 18080
