@@ -1,1 +1,1 @@
-LEVEL 1: Spring Boot + JSP + RESTful + VanilaJS(CRUD)
+LEVEL 1: Spring Boot + RESTful + VanilaJS(CRUD)
