@@ -1,1 +1,1 @@
-LEVEL 0: Spring Boot + JSP + Form Action(CRUD)
+LEVEL 1: Spring Boot + JSP + RESTful + VanilaJS(CRUD)
