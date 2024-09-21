@@ -1,1 +1,1 @@
-LEVEL 1: Spring Boot + RESTful + VanilaJS(CRUD)
+LEVEL 2: Spring Boot + RESTful + JQuery(CRUD)
