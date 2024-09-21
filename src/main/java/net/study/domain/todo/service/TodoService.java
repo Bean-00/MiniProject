@@ -13,4 +13,6 @@ public interface TodoService {
     void update(TodoItem todoItem);
 
     void deleteById(int id);
+
+    TodoItem findItemById(int id);
 }

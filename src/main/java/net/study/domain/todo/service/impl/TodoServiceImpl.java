@@ -43,4 +43,9 @@ public class TodoServiceImpl implements TodoService {
     public void deleteById(int id) {
         todoDao.deleteById(id);
     }
+
+    @Override
+    public TodoItem findItemById(int id) {
+        return todoDao.findById(id);
+    }
 }

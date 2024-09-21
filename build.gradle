@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.5.7'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'war'
 }
 
 group = 'net.study'
@@ -22,9 +21,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 
 //    implementation 'com.oracle.database.jdbc:ojdbc8:18.15.0.0'
-    //jsp파일 사용 시 필요 (Spring boot에서는 jsp엔진 포함 X)
-    implementation 'javax.servlet:jstl'
-    implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
 
     implementation 'org.apache.commons:commons-lang3:3.12.0'
 
@@ -45,8 +41,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-tasks.withType(org.springframework.boot.gradle.tasks.bundling.BootWar) {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

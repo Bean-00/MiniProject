@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping({"","/"})
-public class indexController {
+public class ViewController {
 
     @GetMapping("")
     public String index() {
-        return "redirect:/todo/list";
+        return "redirect:/todo";
+    }
+
+    @GetMapping("/todo")
+    public String todo() {
+        return "todo";
     }
 }

@@ -24,4 +24,11 @@
         FROM TODO_ITEM
         WHERE id = #{id};
     </delete>
+
+    <select id="findById" parameterType="int" resultType="todoItem">
+        SELECT
+            *
+        FROM TODO_ITEM
+        WHERE id = #{id}
+    </select>
 </mapper>
