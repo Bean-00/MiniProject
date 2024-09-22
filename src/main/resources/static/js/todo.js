@@ -1,3 +1,5 @@
+let $modal
+
 const createTodoList = (todoList) => {
     const $todoListUl = document.getElementById("todo-list")
     $todoListUl.innerHTML = ''
@@ -32,7 +34,7 @@ const createTodoCountElement = (todoList) => {
 }
 
 const getTodoList = () => {
-    sendGetAjax('/api/todo-items',(res) => {
+    sendGetAjax('/api/todo-items', (res) => {
         const todoList = JSON.parse(res)
         console.debug("res.target.status: ", todoList)
         createTodoCountElement(todoList)
@@ -44,7 +46,7 @@ const addItem = (event) => {
     event.preventDefault()
     const $el = document.getElementById('todo-content')
     const content = $el.value
-    sendPostAjax('/api/todo-items',  {content: content}, () => {
+    sendPostAjax('/api/todo-items', {content: content}, () => {
         $el.value = ''
         getTodoList()
     })
@@ -55,7 +57,15 @@ const updateItem = (id, completed) => {
 }
 
 const deleteItem = (id) => {
-    sendDeleteAjax(`/api/todo-items/${id}`, getTodoList)
+    const $modalBtn = document.getElementById('modal-btn')
+    const $deleteBtn = document.getElementById('delete-btn')
+    const listener = event => {
+        // console.debug("#####", id)
+        sendDeleteAjax(`/api/todo-items/${id}`, getTodoList)
+        $deleteBtn.removeEventListener('click', listener)
+    }
+    $modalBtn.click()
+    $deleteBtn.addEventListener("click", listener)
 }
 
 const sendGetAjax = (url, successCallback) => {
@@ -70,7 +80,7 @@ const sendPutAjax = (url, body, successCallback) => {
     sendAjax(url, 'PUT', body, successCallback)
 }
 
-const sendDeleteAjax = (url,successCallback) => {
+const sendDeleteAjax = (url, successCallback) => {
     sendAjax(url, 'DELETE', null, successCallback)
 }
 
@@ -92,4 +102,7 @@ const sendAjax = (url, method, body, successCallback) => {
     }
 }
 
-window.onload = getTodoList
+window.onload = () => {
+
+    getTodoList()
+}
